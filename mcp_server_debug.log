@@ -1,0 +1,163 @@
+2025-07-22 16:04:14,219 - my-mcp-server - INFO - MCP Server initializing...
+2025-07-22 16:04:14,219 - mcp.server.lowlevel.server - DEBUG - Initializing server 'my-mcp-server'
+2025-07-22 16:04:14,219 - my-mcp-server - INFO - Server object created successfully
+2025-07-22 16:04:14,219 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2025-07-22 16:04:14,220 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2025-07-22 16:04:14,220 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-22 16:04:14,221 - my-mcp-server - INFO - Connecting to stdio transport...
+2025-07-22 16:04:14,226 - my-mcp-server - INFO - stdio connection established - server ready
+2025-07-22 16:04:14,226 - my-mcp-server - INFO - Server capabilities: experimental={} logging=None prompts=None resources=None tools=ToolsCapability(listChanged=False) completions=None
+2025-07-22 16:05:30,481 - my-mcp-server - INFO - MCP Server initializing...
+2025-07-22 16:05:30,481 - mcp.server.lowlevel.server - DEBUG - Initializing server 'my-mcp-server'
+2025-07-22 16:05:30,481 - my-mcp-server - INFO - Server object created successfully
+2025-07-22 16:05:30,481 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2025-07-22 16:05:30,481 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2025-07-22 16:05:30,481 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-22 16:05:30,481 - my-mcp-server - INFO - Connecting to stdio transport...
+2025-07-22 16:05:30,492 - my-mcp-server - INFO - stdio connection established - server ready
+2025-07-22 16:05:30,492 - my-mcp-server - INFO - Server capabilities: experimental={} logging=None prompts=None resources=None tools=ToolsCapability(listChanged=False) completions=None
+2025-07-22 16:09:12,289 - my-mcp-server - INFO - Server stopped by user interrupt
+2025-07-22 16:15:58,344 - my-mcp-server - INFO - MCP Server initializing...
+2025-07-22 16:15:58,344 - mcp.server.lowlevel.server - DEBUG - Initializing server 'my-mcp-server'
+2025-07-22 16:15:58,344 - my-mcp-server - INFO - Server object created successfully
+2025-07-22 16:15:58,344 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2025-07-22 16:15:58,344 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2025-07-22 16:15:58,344 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-22 16:15:58,347 - my-mcp-server - INFO - Connecting to stdio transport...
+2025-07-22 16:15:58,352 - my-mcp-server - INFO - stdio connection established - server ready
+2025-07-22 16:15:58,354 - my-mcp-server - INFO - Server capabilities: experimental={} logging=None prompts=None resources=None tools=ToolsCapability(listChanged=False) completions=None
+2025-07-22 16:15:58,369 - mcp.server.lowlevel.server - DEBUG - Received message: root=InitializedNotification(method='notifications/initialized', params=None, jsonrpc='2.0')
+2025-07-22 16:16:02,295 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A97B2C0>
+2025-07-22 16:16:02,295 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-22 16:16:02,295 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListToolsRequest
+2025-07-22 16:16:02,296 - my-mcp-server - INFO - 🔧 Tools list requested
+2025-07-22 16:16:02,296 - my-mcp-server - INFO - Returning 3 tools
+2025-07-22 16:16:02,296 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:29,290 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469AA16AB0>
+2025-07-22 16:16:29,290 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:29,290 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:29,292 - my-mcp-server - INFO - 🛠️  Tool called: get_current_time
+2025-07-22 16:16:29,292 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
+2025-07-22 16:16:29,292 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-22 16:16:29
+2025-07-22 16:16:29,293 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:33,428 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A97B290>
+2025-07-22 16:16:33,428 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:33,428 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:33,428 - my-mcp-server - INFO - 🛠️  Tool called: calculate
+2025-07-22 16:16:33,429 - my-mcp-server - INFO - 📥 Arguments: {'expression': ''}
+2025-07-22 16:16:33,429 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:35,058 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A73C8C0>
+2025-07-22 16:16:35,059 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:35,059 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:35,059 - my-mcp-server - INFO - 🛠️  Tool called: echo
+2025-07-22 16:16:35,060 - my-mcp-server - INFO - 📥 Arguments: {'text': ''}
+2025-07-22 16:16:35,060 - my-mcp-server - INFO - ✅ Echo result: Echo: 
+2025-07-22 16:16:35,060 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:36,463 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469AA17470>
+2025-07-22 16:16:36,463 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:36,464 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:36,464 - my-mcp-server - INFO - 🛠️  Tool called: get_current_time
+2025-07-22 16:16:36,464 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
+2025-07-22 16:16:36,464 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-22 16:16:36
+2025-07-22 16:16:36,465 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:38,616 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469AA17440>
+2025-07-22 16:16:38,616 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:38,616 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:38,617 - my-mcp-server - INFO - 🛠️  Tool called: get_current_time
+2025-07-22 16:16:38,618 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
+2025-07-22 16:16:38,618 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-22 16:16:38
+2025-07-22 16:16:38,618 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:39,086 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A97B2C0>
+2025-07-22 16:16:39,086 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:39,086 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:39,087 - my-mcp-server - INFO - 🛠️  Tool called: get_current_time
+2025-07-22 16:16:39,087 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
+2025-07-22 16:16:39,087 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-22 16:16:39
+2025-07-22 16:16:39,087 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:39,513 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469AA17B90>
+2025-07-22 16:16:39,514 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:39,514 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:39,515 - my-mcp-server - INFO - 🛠️  Tool called: get_current_time
+2025-07-22 16:16:39,515 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
+2025-07-22 16:16:39,515 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-22 16:16:39
+2025-07-22 16:16:39,516 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:40,428 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x00000246996B6D80>
+2025-07-22 16:16:40,428 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:40,428 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:40,430 - my-mcp-server - INFO - 🛠️  Tool called: calculate
+2025-07-22 16:16:40,430 - my-mcp-server - INFO - 📥 Arguments: {'expression': ''}
+2025-07-22 16:16:40,431 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:40,992 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A4DD280>
+2025-07-22 16:16:40,993 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:40,993 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:40,994 - my-mcp-server - INFO - 🛠️  Tool called: calculate
+2025-07-22 16:16:40,994 - my-mcp-server - INFO - 📥 Arguments: {'expression': ''}
+2025-07-22 16:16:40,994 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:16:41,463 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A8CA270>
+2025-07-22 16:16:41,464 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:16:41,464 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:16:41,465 - my-mcp-server - INFO - 🛠️  Tool called: calculate
+2025-07-22 16:16:41,465 - my-mcp-server - INFO - 📥 Arguments: {'expression': ''}
+2025-07-22 16:16:41,465 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:19:19,624 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A56D700>
+2025-07-22 16:19:19,624 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:19:19,624 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:19:19,625 - my-mcp-server - INFO - 🛠️  Tool called: calculate
+2025-07-22 16:19:19,625 - my-mcp-server - INFO - 📥 Arguments: {'expression': '12+2\n'}
+2025-07-22 16:19:19,626 - my-mcp-server - INFO - ✅ Calculation result: 14
+2025-07-22 16:19:19,626 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:19:28,705 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A69DD90>
+2025-07-22 16:19:28,706 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:19:28,706 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:19:28,707 - my-mcp-server - INFO - 🛠️  Tool called: echo
+2025-07-22 16:19:28,707 - my-mcp-server - INFO - 📥 Arguments: {'text': 'Hello world\n'}
+2025-07-22 16:19:28,707 - my-mcp-server - INFO - ✅ Echo result: Echo: Hello world
+
+2025-07-22 16:19:28,707 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:22:47,290 - my-mcp-server - INFO - Server stopped by user interrupt
+2025-07-22 16:22:49,689 - my-mcp-server - INFO - MCP Server initializing...
+2025-07-22 16:22:49,689 - mcp.server.lowlevel.server - DEBUG - Initializing server 'my-mcp-server'
+2025-07-22 16:22:49,689 - my-mcp-server - INFO - Server object created successfully
+2025-07-22 16:22:49,689 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2025-07-22 16:22:49,689 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2025-07-22 16:22:49,689 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-22 16:22:49,692 - my-mcp-server - INFO - Connecting to stdio transport...
+2025-07-22 16:22:49,696 - my-mcp-server - INFO - stdio connection established - server ready
+2025-07-22 16:22:49,696 - my-mcp-server - INFO - Server capabilities: experimental={} logging=None prompts=None resources=None tools=ToolsCapability(listChanged=False) completions=None
+2025-07-22 16:24:27,267 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A52B0B0>
+2025-07-22 16:24:27,267 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:24:27,267 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:24:27,267 - my-mcp-server - INFO - 🛠️  Tool called: get_current_time
+2025-07-22 16:24:27,267 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
+2025-07-22 16:24:27,267 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-22 16:24:27
+2025-07-22 16:24:27,267 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-22 16:39:01,886 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000002469A73C8C0>
+2025-07-22 16:39:01,886 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-22 16:39:01,889 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-22 16:39:01,889 - my-mcp-server - INFO - 🛠️  Tool called: get_current_time
+2025-07-22 16:39:01,889 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
+2025-07-22 16:39:01,889 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-22 16:39:01
+2025-07-22 16:39:01,889 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-25 20:15:01,893 - my-mcp-server - INFO - MCP Server initializing...
+2025-07-25 20:15:01,894 - mcp.server.lowlevel.server - DEBUG - Initializing server 'my-mcp-server'
+2025-07-25 20:15:01,894 - my-mcp-server - INFO - Server object created successfully
+2025-07-25 20:15:01,894 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2025-07-25 20:15:01,894 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2025-07-25 20:15:01,895 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-25 20:15:01,897 - my-mcp-server - INFO - Connecting to stdio transport...
+2025-07-25 20:15:01,904 - my-mcp-server - INFO - stdio connection established - server ready
+2025-07-25 20:15:01,904 - my-mcp-server - INFO - Server capabilities: experimental={} logging=None prompts=None resources=None tools=ToolsCapability(listChanged=False) completions=None
+2025-07-25 20:15:01,933 - mcp.server.lowlevel.server - DEBUG - Received message: root=InitializedNotification(method='notifications/initialized', params=None, jsonrpc='2.0')
+2025-07-25 20:15:12,969 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000001C88A36A3C0>
+2025-07-25 20:15:12,969 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-25 20:15:12,969 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListToolsRequest
+2025-07-25 20:15:12,969 - my-mcp-server - INFO - 🔧 Tools list requested
+2025-07-25 20:15:12,969 - my-mcp-server - INFO - Returning 3 tools
+2025-07-25 20:15:12,970 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-25 20:15:22,853 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000001C88A56CD10>
+2025-07-25 20:15:22,853 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-25 20:15:22,853 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-25 20:15:22,855 - my-mcp-server - INFO - 🛠️  Tool called: get_current_time
+2025-07-25 20:15:22,855 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
+2025-07-25 20:15:22,855 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-25 20:15:22
+2025-07-25 20:15:22,857 - mcp.server.lowlevel.server - DEBUG - Response sent

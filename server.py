@@ -1,48 +1,64 @@
 import asyncio
 import logging
 import sys
+import json
+from datetime import datetime
 from mcp.server.models import InitializationOptions
 import mcp.server.stdio
 import mcp.types as types
 from mcp.server import NotificationOptions, Server
 
-# ตั้งค่า logging
+# ตั้งค่า logging ที่ละเอียดขึ้น
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('mcp_server.log', encoding='utf-8'),
+        logging.FileHandler('mcp_server_debug.log', encoding='utf-8'),
         logging.StreamHandler(sys.stderr)
     ]
 )
 logger = logging.getLogger("my-mcp-server")
 
-logger.info("Starting MCP Server...")
-print("MCP Server is starting...", file=sys.stderr)
+# เพิ่ม startup messages
+print("=" * 50, file=sys.stderr)
+print("MCP Server Starting...", file=sys.stderr)
+print(f"Python version: {sys.version}", file=sys.stderr)
+print(f"Working directory: {sys.path[0]}", file=sys.stderr)
+print("=" * 50, file=sys.stderr)
 
-server = Server("my-mcp-server")
+logger.info("MCP Server initializing...")
+
+try:
+    server = Server("my-mcp-server")
+    logger.info("Server object created successfully")
+except Exception as e:
+    logger.error(f"Failed to create server: {e}")
+    sys.exit(1)
 
 @server.list_tools()
 async def handle_list_tools() -> list[types.Tool]:
     """ลิสต์ tools ที่มี"""
-    logger.info("Tools requested")
-    return [
+    logger.info("🔧 Tools list requested")
+    print("📋 Listing available tools...", file=sys.stderr)
+    
+    tools = [
         types.Tool(
             name="get_current_time",
-            description="Get the current time",
+            description="Get the current time for any timezone",
             inputSchema={
                 "type": "object",
                 "properties": {
                     "timezone": {
                         "type": "string",
-                        "description": "Timezone (optional)"
+                        "description": "Timezone (e.g., 'Asia/Bangkok', 'UTC')",
+                        "default": "local"
                     }
                 }
             }
         ),
         types.Tool(
             name="calculate",
-            description="Perform basic calculations",
+            description="Perform basic mathematical calculations",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -69,82 +85,83 @@ async def handle_list_tools() -> list[types.Tool]:
             }
         )
     ]
+    
+    logger.info(f"Returning {len(tools)} tools")
+    return tools
 
 @server.call_tool()
 async def handle_call_tool(
     name: str, arguments: dict | None
 ) -> list[types.TextContent]:
     """จัดการคำขอใช้ tools"""
-    logger.info(f"Tool called: {name} with args: {arguments}")
+    logger.info(f"🛠️  Tool called: {name}")
+    logger.info(f"📥 Arguments: {arguments}")
+    print(f"⚡ Executing tool: {name}", file=sys.stderr)
     
-    if name == "get_current_time":
-        from datetime import datetime
-        timezone = arguments.get("timezone", "local") if arguments else "local"
-        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        logger.info(f"Returning time: {current_time}")
-        return [
-            types.TextContent(
-                type="text",
-                text=f"Current time ({timezone}): {current_time}"
-            )
-        ]
-    
-    elif name == "calculate":
-        try:
+    try:
+        if name == "get_current_time":
+            timezone_name = arguments.get("timezone", "local") if arguments else "local"
+            current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            result_text = f"Current time ({timezone_name}): {current_time}"
+            
+            logger.info(f"✅ Time result: {result_text}")
+            return [types.TextContent(type="text", text=result_text)]
+        
+        elif name == "calculate":
             expression = arguments.get("expression", "") if arguments else ""
-            logger.info(f"Calculating: {expression}")
+            if not expression:
+                return [types.TextContent(type="text", text="No expression provided")]
             
-            # ใช้ eval อย่างปลอดภัยสำหรับ demo
-            allowed_names = {
-                k: v for k, v in __builtins__.items() 
-                if k in ('abs', 'round', 'min', 'max', 'pow', 'sum')
-            }
-            allowed_names.update({
-                '__builtins__': {},
-                'pi': 3.14159,
-                'e': 2.71828
-            })
+            # Safe evaluation
+            try:
+                allowed_names = {
+                    '__builtins__': {},
+                    'abs': abs, 'round': round, 'min': min, 'max': max, 'pow': pow,
+                    'pi': 3.14159, 'e': 2.71828
+                }
+                result = eval(expression, allowed_names)
+                result_text = f"Expression: {expression}\nResult: {result}"
+                
+                logger.info(f"✅ Calculation result: {result}")
+                return [types.TextContent(type="text", text=result_text)]
+                
+            except Exception as calc_error:
+                error_text = f"Calculation error: {str(calc_error)}"
+                logger.error(error_text)
+                return [types.TextContent(type="text", text=error_text)]
+        
+        elif name == "echo":
+            text = arguments.get("text", "") if arguments else ""
+            result_text = f"Echo: {text}"
             
-            result = eval(expression, allowed_names)
-            logger.info(f"Result: {result}")
+            logger.info(f"✅ Echo result: {result_text}")
+            return [types.TextContent(type="text", text=result_text)]
+        
+        else:
+            error_msg = f"Unknown tool: {name}"
+            logger.error(f"❌ {error_msg}")
+            raise ValueError(error_msg)
             
-            return [
-                types.TextContent(
-                    type="text",
-                    text=f"Expression: {expression}\nResult: {result}"
-                )
-            ]
-        except Exception as e:
-            logger.error(f"Calculation error: {str(e)}")
-            return [
-                types.TextContent(
-                    type="text",
-                    text=f"Error calculating '{expression}': {str(e)}"
-                )
-            ]
-    
-    elif name == "echo":
-        text = arguments.get("text", "") if arguments else ""
-        logger.info(f"Echoing: {text}")
-        return [
-            types.TextContent(
-                type="text",
-                text=f"Echo: {text}"
-            )
-        ]
-    
-    else:
-        logger.error(f"Unknown tool: {name}")
-        raise ValueError(f"Unknown tool: {name}")
+    except Exception as e:
+        logger.error(f"❌ Tool execution error: {str(e)}", exc_info=True)
+        return [types.TextContent(type="text", text=f"Error: {str(e)}")]
 
 async def main():
-    logger.info("Connecting to stdio...")
-    print("Connecting to stdio...", file=sys.stderr)
+    print("🔗 Attempting to connect to stdio...", file=sys.stderr)
+    logger.info("Connecting to stdio transport...")
     
     try:
         async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
-            logger.info("Connected! Ready to serve...")
-            print("Connected! Ready to serve...", file=sys.stderr)
+            print("✅ Connected to stdio successfully!", file=sys.stderr)
+            print("🚀 MCP Server is ready to serve requests", file=sys.stderr)
+            logger.info("stdio connection established - server ready")
+            
+            # แสดงข้อมูล server
+            capabilities = server.get_capabilities(
+                notification_options=NotificationOptions(),
+                experimental_capabilities={},
+            )
+            logger.info(f"Server capabilities: {capabilities}")
             
             await server.run(
                 read_stream,
@@ -152,23 +169,25 @@ async def main():
                 InitializationOptions(
                     server_name="my-mcp-server",
                     server_version="1.0.0",
-                    capabilities=server.get_capabilities(
-                        notification_options=NotificationOptions(),
-                        experimental_capabilities={},
-                    ),
+                    capabilities=capabilities,
                 ),
             )
+            
     except Exception as e:
-        logger.error(f"Server error: {str(e)}")
-        print(f"Server error: {str(e)}", file=sys.stderr)
+        print(f"❌ Connection error: {str(e)}", file=sys.stderr)
+        logger.error(f"stdio connection failed: {str(e)}", exc_info=True)
         raise
 
 if __name__ == "__main__":
     try:
+        print("🎯 Starting MCP server main loop...", file=sys.stderr)
         asyncio.run(main())
     except KeyboardInterrupt:
-        logger.info("Server stopped by user")
-        print("Server stopped by user", file=sys.stderr)
+        print("\n⏹️  Server stopped by user (Ctrl+C)", file=sys.stderr)
+        logger.info("Server stopped by user interrupt")
     except Exception as e:
-        logger.error(f"Fatal error: {str(e)}")
-        print(f"Fatal error: {str(e)}", file=sys.stderr)
+        print(f"💥 Fatal server error: {str(e)}", file=sys.stderr)
+        logger.error(f"Fatal error in main: {str(e)}", exc_info=True)
+        sys.exit(1)
+    finally:
+        print("🔚 MCP Server shutdown complete", file=sys.stderr)
