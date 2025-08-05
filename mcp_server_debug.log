@@ -161,3 +161,62 @@
 2025-07-25 20:15:22,855 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
 2025-07-25 20:15:22,855 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-25 20:15:22
 2025-07-25 20:15:22,857 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-25 20:29:50,495 - my-mcp-server - INFO - MCP Server initializing...
+2025-07-25 20:29:50,495 - mcp.server.lowlevel.server - DEBUG - Initializing server 'my-mcp-server'
+2025-07-25 20:29:50,495 - my-mcp-server - INFO - Server object created successfully
+2025-07-25 20:29:50,495 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2025-07-25 20:29:50,495 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2025-07-25 20:29:50,496 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-25 20:29:50,497 - my-mcp-server - INFO - Connecting to stdio transport...
+2025-07-25 20:29:50,504 - my-mcp-server - INFO - stdio connection established - server ready
+2025-07-25 20:29:50,505 - my-mcp-server - INFO - Server capabilities: experimental={} logging=None prompts=None resources=None tools=ToolsCapability(listChanged=False) completions=None
+2025-07-25 20:29:50,527 - mcp.server.lowlevel.server - DEBUG - Received message: root=InitializedNotification(method='notifications/initialized', params=None, jsonrpc='2.0')
+2025-07-25 20:30:15,121 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x00000264393AA9C0>
+2025-07-25 20:30:15,122 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-25 20:30:15,122 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListToolsRequest
+2025-07-25 20:30:15,122 - my-mcp-server - INFO - 🔧 Tools list requested
+2025-07-25 20:30:15,123 - my-mcp-server - INFO - Returning 3 tools
+2025-07-25 20:30:15,123 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-25 20:31:11,453 - my-mcp-server - INFO - MCP Server initializing...
+2025-07-25 20:31:11,454 - mcp.server.lowlevel.server - DEBUG - Initializing server 'my-mcp-server'
+2025-07-25 20:31:11,454 - my-mcp-server - INFO - Server object created successfully
+2025-07-25 20:31:11,454 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2025-07-25 20:31:11,454 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2025-07-25 20:31:11,455 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-25 20:31:11,456 - my-mcp-server - INFO - Connecting to stdio transport...
+2025-07-25 20:31:11,461 - my-mcp-server - INFO - stdio connection established - server ready
+2025-07-25 20:31:11,461 - my-mcp-server - INFO - Server capabilities: experimental={} logging=None prompts=None resources=None tools=ToolsCapability(listChanged=False) completions=None
+2025-07-25 20:31:11,645 - mcp.server.lowlevel.server - DEBUG - Received message: 1 validation error for JSONRPCMessage
+  Invalid JSON: EOF while parsing a value at line 2 column 0 [type=json_invalid, input_value='\n', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/json_invalid
+2025-07-25 20:33:03,998 - my-mcp-server - INFO - Server stopped by user interrupt
+2025-07-25 20:33:12,618 - my-mcp-server - INFO - MCP Server initializing...
+2025-07-25 20:33:12,619 - mcp.server.lowlevel.server - DEBUG - Initializing server 'my-mcp-server'
+2025-07-25 20:33:12,619 - my-mcp-server - INFO - Server object created successfully
+2025-07-25 20:33:12,619 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2025-07-25 20:33:12,619 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2025-07-25 20:33:12,619 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-25 20:33:12,620 - my-mcp-server - INFO - Connecting to stdio transport...
+2025-07-25 20:33:12,625 - my-mcp-server - INFO - stdio connection established - server ready
+2025-07-25 20:33:12,626 - my-mcp-server - INFO - Server capabilities: experimental={} logging=None prompts=None resources=None tools=ToolsCapability(listChanged=False) completions=None
+2025-07-25 20:33:12,642 - mcp.server.lowlevel.server - DEBUG - Received message: root=InitializedNotification(method='notifications/initialized', params=None, jsonrpc='2.0')
+2025-07-25 20:33:14,351 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000001ACF7B99CD0>
+2025-07-25 20:33:14,351 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-25 20:33:14,351 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListToolsRequest
+2025-07-25 20:33:14,351 - my-mcp-server - INFO - 🔧 Tools list requested
+2025-07-25 20:33:14,353 - my-mcp-server - INFO - Returning 3 tools
+2025-07-25 20:33:14,353 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-25 20:35:22,825 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000001ACF7BDCD10>
+2025-07-25 20:35:22,826 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-25 20:35:22,826 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-25 20:35:22,827 - my-mcp-server - INFO - 🛠️  Tool called: get_current_time
+2025-07-25 20:35:22,827 - my-mcp-server - INFO - 📥 Arguments: {'timezone': 'local'}
+2025-07-25 20:35:22,827 - my-mcp-server - INFO - ✅ Time result: Current time (local): 2025-07-25 20:35:22
+2025-07-25 20:35:22,828 - mcp.server.lowlevel.server - DEBUG - Response sent
+2025-07-25 20:35:35,897 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x000001ACF7CE6CC0>
+2025-07-25 20:35:35,897 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-25 20:35:35,897 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type CallToolRequest
+2025-07-25 20:35:35,898 - my-mcp-server - INFO - 🛠️  Tool called: calculate
+2025-07-25 20:35:35,898 - my-mcp-server - INFO - 📥 Arguments: {'expression': '1+1\n'}
+2025-07-25 20:35:35,899 - my-mcp-server - INFO - ✅ Calculation result: 2
+2025-07-25 20:35:35,899 - mcp.server.lowlevel.server - DEBUG - Response sent
